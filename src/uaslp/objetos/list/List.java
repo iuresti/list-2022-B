@@ -1,9 +1,9 @@
 package uaslp.objetos.list;
 
 public interface List {
-    void addAtTail(String data);
+    void addAtTail(Object data);
 
-    void addAtFront(String data);
+    void addAtFront(Object data);
 
     boolean remove(int index);
 
@@ -16,11 +16,11 @@ public interface List {
      * @param data Dato a colocar en la lista
      * @return true si el indice era válido, false de lo contrario
      */
-    boolean setAt(int index, String data);
+    boolean setAt(int index, Object data);
 
-    String getAt(int index);
+    Object getAt(int index);
 
-    void removeAllWithValue(String data);
+    void removeAllWithValue(Object data);
 
     int getSize();
 

@@ -19,9 +19,9 @@ public class LinkedList implements List {
     private static class Node { //Sin palabra de modificador de acceso es package-private
         Node next;
         Node previous;
-        String data;
+        Object data;
 
-        public Node(String data) {
+        public Node(Object data) {
             this.data = data;
         }
     }
@@ -37,8 +37,8 @@ public class LinkedList implements List {
             return current != null;
         }
 
-        public String next() {
-            String data = current.data;
+        public Object next() {
+            Object data = current.data;
 
             current = current.next;
 
@@ -47,7 +47,7 @@ public class LinkedList implements List {
     }
 
 
-    public void addAtTail(String data) {
+    public void addAtTail(Object data) {
         Node node = new Node(data);
 
         node.previous = tail;
@@ -62,7 +62,7 @@ public class LinkedList implements List {
         size++;
     }
 
-    public void addAtFront(String data) {
+    public void addAtFront(Object data) {
         Node node = new Node(data);
 
         node.next = head;
@@ -110,7 +110,7 @@ public class LinkedList implements List {
         size = 0;
     }
 
-    public boolean setAt(int index, String data) {
+    public boolean setAt(int index, Object data) {
         if (index < 0 || index >= size) {
             return false;
         }
@@ -122,7 +122,7 @@ public class LinkedList implements List {
         return true;
     }
 
-    public String getAt(int index) {
+    public Object getAt(int index) {
         if (index < 0 || index >= size) {
             return null;
         }
@@ -132,7 +132,7 @@ public class LinkedList implements List {
         return node.data;
     }
 
-    public void removeAllWithValue(String value) {
+    public void removeAllWithValue(Object value) {
         Node current = head;
 
         while (current != null) {

@@ -22,5 +22,5 @@ public interface Iterator {
      * Regresa el elemento actual y avanza al siguiente
      * @return El elemento actual
      */
-    String next();
+    Object next();
 }

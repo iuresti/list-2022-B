@@ -62,6 +62,10 @@ public class Main {
 
         List datos = new ArrayList();
 
+        datos.addAtTail(30);
+        datos.addAtTail(new Alumno());
+
+
         datos.getIterator();
 
         datos.addAtTail("uno");
@@ -75,9 +79,15 @@ public class Main {
         Iterator iterator = datos.getIterator();
 
         while (iterator.hasNext()) {
-            String value = iterator.next();
+            Object value = iterator.next();
 
-            System.out.println(value);
+            if(value instanceof String){
+                System.out.println(((String)value).toUpperCase());
+            } else{
+                System.out.println(value);
+            }
+
+
         }
         System.out.println("---------------------");
 
@@ -90,7 +100,7 @@ public class Main {
         iterator = datos.getIterator();
 
         while (iterator.hasNext()) {
-            String value = iterator.next();
+            Object value = iterator.next();
 
             System.out.println(value);
         }

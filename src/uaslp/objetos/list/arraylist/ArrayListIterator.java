@@ -15,7 +15,7 @@ class ArrayListIterator implements Iterator {
         return currentIndex < arrayList.getSize();
     }
 
-    public String next() {
+    public Object next() {
         return arrayList.getAt(currentIndex++);
     }
 }

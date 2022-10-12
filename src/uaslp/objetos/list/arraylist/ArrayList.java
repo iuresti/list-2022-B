@@ -5,15 +5,15 @@ import uaslp.objetos.list.List;
 
 public class ArrayList implements List {
 
-    private String[] data;
+    private Object[] data;
     private int size;
 
     public ArrayList() {
-        data = new String[2];
+        data = new Object[2];
     }
 
 
-    public void addAtTail(String data) {
+    public void addAtTail(Object data) {
         if (size == this.data.length) {
             increaseArraySize();
         }
@@ -23,7 +23,7 @@ public class ArrayList implements List {
     }
 
     private void increaseArraySize() {
-        String[] newArray = new String[this.data.length * 2];
+        Object[] newArray = new Object[this.data.length * 2];
 
         for (int i = 0; i < data.length; i++) {
             newArray[i] = data[i];
@@ -33,7 +33,7 @@ public class ArrayList implements List {
 
     }
 
-    public void addAtFront(String data) {
+    public void addAtFront(Object data) {
         if (size == this.data.length) {
             increaseArraySize();
         }
@@ -69,7 +69,7 @@ public class ArrayList implements List {
 
     }
 
-    public boolean setAt(int index, String data) {
+    public boolean setAt(int index, Object data) {
         if (index < 0 || index >= size) {
             return false;
         }
@@ -79,7 +79,7 @@ public class ArrayList implements List {
         return true;
     }
 
-    public String getAt(int index) {
+    public Object getAt(int index) {
         if (index < 0 || index >= size) {
             return null;
         }
@@ -87,9 +87,9 @@ public class ArrayList implements List {
         return this.data[index];
     }
 
-    public void removeAllWithValue(String value) {
+    public void removeAllWithValue(Object value) {
 
-        String[] newArray = new String[data.length];
+        Object[] newArray = new Object[data.length];
         int count = 0;
 
         for (int i = 0; i < size; i++) {
@@ -116,7 +116,7 @@ public class ArrayList implements List {
                 return currentIndex < size;
             }
 
-            public String next(){
+            public Object next(){
                 return data[currentIndex++];
             }
         };
