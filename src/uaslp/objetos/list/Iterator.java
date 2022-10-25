@@ -9,7 +9,7 @@ package uaslp.objetos.list;
 
 // Refactorización: Código que necesita ser comentado es código que apesta
 
-public interface Iterator {
+public interface Iterator<T> {
 
     /**
      * Indica si hay un elemento disponible en el Iterador
@@ -22,5 +22,5 @@ public interface Iterator {
      * Regresa el elemento actual y avanza al siguiente
      * @return El elemento actual
      */
-    Object next();
+    T next();
 }

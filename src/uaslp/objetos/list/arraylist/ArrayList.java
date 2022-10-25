@@ -3,17 +3,18 @@ package uaslp.objetos.list.arraylist;
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
 
-public class ArrayList implements List {
+public class ArrayList<T> implements List<T> {
 
-    private Object[] data;
+    private T[] data;
     private int size;
 
+    @SuppressWarnings("unchecked")
     public ArrayList() {
-        data = new Object[2];
+        data = (T[])new Object[2];
     }
 
 
-    public void addAtTail(Object data) {
+    public void addAtTail(T data) {
         if (size == this.data.length) {
             increaseArraySize();
         }
@@ -22,8 +23,9 @@ public class ArrayList implements List {
         size++;
     }
 
+    @SuppressWarnings("unchecked")
     private void increaseArraySize() {
-        Object[] newArray = new Object[this.data.length * 2];
+        T[] newArray = (T[])new Object[this.data.length * 2];
 
         for (int i = 0; i < data.length; i++) {
             newArray[i] = data[i];
@@ -33,7 +35,7 @@ public class ArrayList implements List {
 
     }
 
-    public void addAtFront(Object data) {
+    public void addAtFront(T data) {
         if (size == this.data.length) {
             increaseArraySize();
         }
@@ -69,7 +71,7 @@ public class ArrayList implements List {
 
     }
 
-    public boolean setAt(int index, Object data) {
+    public boolean setAt(int index, T data) {
         if (index < 0 || index >= size) {
             return false;
         }
@@ -79,7 +81,7 @@ public class ArrayList implements List {
         return true;
     }
 
-    public Object getAt(int index) {
+    public T getAt(int index) {
         if (index < 0 || index >= size) {
             return null;
         }
@@ -87,9 +89,10 @@ public class ArrayList implements List {
         return this.data[index];
     }
 
-    public void removeAllWithValue(Object value) {
+    @SuppressWarnings("unchecked")
+    public void removeAllWithValue(T value) {
 
-        Object[] newArray = new Object[data.length];
+        T[] newArray = (T[])new Object[data.length];
         int count = 0;
 
         for (int i = 0; i < size; i++) {
@@ -107,8 +110,8 @@ public class ArrayList implements List {
         return size;
     }
 
-    public Iterator getIterator() {
-        return new Iterator(){ // Clase anónima
+    public Iterator<T> getIterator() {
+        return new Iterator<T>(){ // Clase anónima
                  // Inner class no estática
             private int currentIndex = 0;
 
@@ -116,7 +119,7 @@ public class ArrayList implements List {
                 return currentIndex < size;
             }
 
-            public Object next(){
+            public T next(){
                 return data[currentIndex++];
             }
         };

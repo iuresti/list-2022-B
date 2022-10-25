@@ -9,25 +9,25 @@ import uaslp.objetos.list.List;
 // LinkedList es la outer class de Node
 // LinkedList es la outer class de LinkedListIterator
 
-public class LinkedList implements List {
-    private Node head;
-    private Node tail;
+public class LinkedList<T> implements List<T> {
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     // uaslp.objetos.list.linkedlist.LinkedList.Node
 
-    private static class Node { //Sin palabra de modificador de acceso es package-private
-        Node next;
-        Node previous;
-        Object data;
+    private static class Node<S> { //Sin palabra de modificador de acceso es package-private
+        Node<S> next;
+        Node<S> previous;
+        S data;
 
-        public Node(Object data) {
+        public Node(S data) {
             this.data = data;
         }
     }
 
-    public class LinkedListIterator implements Iterator {
-        private Node current;
+    public class LinkedListIterator implements Iterator<T> {
+        private Node<T> current;
 
         public LinkedListIterator() {
             this.current = head;
@@ -37,8 +37,8 @@ public class LinkedList implements List {
             return current != null;
         }
 
-        public Object next() {
-            Object data = current.data;
+        public T next() {
+            T data = current.data;
 
             current = current.next;
 
@@ -47,8 +47,8 @@ public class LinkedList implements List {
     }
 
 
-    public void addAtTail(Object data) {
-        Node node = new Node(data);
+    public void addAtTail(T data) {
+        Node<T> node = new Node<>(data);
 
         node.previous = tail;
         tail = node;
@@ -62,8 +62,8 @@ public class LinkedList implements List {
         size++;
     }
 
-    public void addAtFront(Object data) {
-        Node node = new Node(data);
+    public void addAtFront(T data) {
+        Node<T> node = new Node<>(data);
 
         node.next = head;
         head = node;
@@ -93,7 +93,7 @@ public class LinkedList implements List {
             tail = tail.previous;
             tail.next = null;
         } else {
-            Node iteratorNode = findNodeByIndex(indexToRemove);
+            Node<T> iteratorNode = findNodeByIndex(indexToRemove);
 
             iteratorNode.previous.next = iteratorNode.next;
             iteratorNode.next.previous = iteratorNode.previous;
@@ -110,30 +110,30 @@ public class LinkedList implements List {
         size = 0;
     }
 
-    public boolean setAt(int index, Object data) {
+    public boolean setAt(int index, T data) {
         if (index < 0 || index >= size) {
             return false;
         }
 
-        Node node = findNodeByIndex(index);
+        Node<T> node = findNodeByIndex(index);
 
         node.data = data;
 
         return true;
     }
 
-    public Object getAt(int index) {
+    public T getAt(int index) {
         if (index < 0 || index >= size) {
             return null;
         }
 
-        Node node = findNodeByIndex(index);
+        Node<T> node = findNodeByIndex(index);
 
         return node.data;
     }
 
-    public void removeAllWithValue(Object value) {
-        Node current = head;
+    public void removeAllWithValue(T value) {
+        Node<T> current = head;
 
         while (current != null) {
             if (current.data.equals(value)) {
@@ -166,8 +166,8 @@ public class LinkedList implements List {
         return new LinkedListIterator();
     }
 
-    private Node findNodeByIndex(int index) {
-        Node iteratorNode = head;
+    private Node<T> findNodeByIndex(int index) {
+        Node<T> iteratorNode = head;
         int indexIteratorNode = 0;
 
         while (indexIteratorNode < index) {

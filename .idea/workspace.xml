@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fa46f5d-52a6-45de-b43a-0c4c5dee2a1f" name="Changes" comment="Parcial 2- tareas">
+    <list default="true" id="1fa46f5d-52a6-45de-b43a-0c4c5dee2a1f" name="Changes" comment="Parcial 2- Listas de objetos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/Iterator.java" afterDir="false" />
@@ -89,6 +89,9 @@
       <workItem from="1664979700851" duration="4896000" />
       <workItem from="1665149539339" duration="934000" />
       <workItem from="1665554801672" duration="1141000" />
+      <workItem from="1666195003509" duration="84000" />
+      <workItem from="1666358040784" duration="1485000" />
+      <workItem from="1666703851485" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="Parcial 2- tareas">
       <created>1665555010877</created>
@@ -149,15 +152,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Parcial 2- tareas" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="oop.collections.list.linkedlist.LinkedList" memberName="head" />
