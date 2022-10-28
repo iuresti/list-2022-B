@@ -152,6 +152,7 @@ public class LinkedList<T> implements List<T> {
                         current.next.previous = current.previous;
                     }
                 }
+                size--;
             }
             current = current.next;
         }

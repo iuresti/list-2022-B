@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fa46f5d-52a6-45de-b43a-0c4c5dee2a1f" name="Changes" comment="Parcial 2- Listas de objetos">
+    <list default="true" id="1fa46f5d-52a6-45de-b43a-0c4c5dee2a1f" name="Changes" comment="Parcial 3 - limpiar proyecto">
+      <change afterPath="$PROJECT_DIR$/test/uaslp/objetos/list/arraylist/ArrayListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/uaslp/objetos/list/linkedlist/LinkedListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collections.iml" beforeDir="false" afterPath="$PROJECT_DIR$/collections.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/Iterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/Iterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayListIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayListIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayListIterator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,6 +41,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -56,17 +60,90 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="uaslp.objetos.list.arraylist" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in collections">
+    <configuration name="All in collections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="collections" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
+      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesAll_thenValuesAreRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="collections" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
+      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
+      <option name="METHOD_NAME" value="givenAnArray_whenRemoveAllWithValueRemovesAll_thenValuesAreRemoved" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesTail_thenValuesAreRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="collections" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
+      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
+      <option name="METHOD_NAME" value="givenAnArray_whenRemoveAllWithValueRemovesTail_thenValuesAreRemoved" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LinkedListTest.givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="collections" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
+      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
+      <option name="METHOD_NAME" value="givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in collections" />
+        <item itemvalue="JUnit.LinkedListTest" />
+        <item itemvalue="JUnit.LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesTail_thenValuesAreRemoved" />
+        <item itemvalue="JUnit.LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesAll_thenValuesAreRemoved" />
+        <item itemvalue="JUnit.LinkedListTest.givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved" />
       </list>
     </recent_temporary>
   </component>
@@ -91,7 +168,10 @@
       <workItem from="1665554801672" duration="1141000" />
       <workItem from="1666195003509" duration="84000" />
       <workItem from="1666358040784" duration="1485000" />
-      <workItem from="1666703851485" duration="40000" />
+      <workItem from="1666703851485" duration="2653000" />
+      <workItem from="1666876929955" duration="2765000" />
+      <workItem from="1666929855441" duration="2231000" />
+      <workItem from="1666963066928" duration="1071000" />
     </task>
     <task id="LOCAL-00001" summary="Parcial 2- tareas">
       <created>1665555010877</created>
@@ -100,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665555010877</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Parcial 3 - limpiar proyecto">
+      <created>1666703957349</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666703957349</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,13 +236,34 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Parcial 2- tareas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parcial 2- tareas" />
+    <MESSAGE value="Parcial 3 - limpiar proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parcial 3 - limpiar proyecto" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="oop.collections.list.linkedlist.LinkedList" memberName="head" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/collections$ArrayListTest.ic" NAME="ArrayListTest Coverage Results" MODIFIED="1666878903696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>uaslp.objetos.list.arraylist.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/collections$LinkedListTest.ic" NAME="LinkedListTest Coverage Results" MODIFIED="1666963565736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>uaslp.objetos.list.linkedlist.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/collections$LinkedListTest_givenANewList_whenAddAtTail_thenSizeIsOne.ic" NAME="LinkedListTest.givenANewList_whenAddAtTail_thenSizeIsOne Coverage Results" MODIFIED="1666704692314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>uaslp.objetos.list.linkedlist.*</FILTER>
+    </SUITE>
   </component>
 </project>
