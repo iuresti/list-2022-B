@@ -8,7 +8,7 @@ import uaslp.objetos.list.exceptions.WrongIndexException;
 public class ArrayList<T> implements List<T> {
 
     private T[] data;
-    private int size;
+    private int size = 1;
 
     @SuppressWarnings("unchecked")
     public ArrayList() {
