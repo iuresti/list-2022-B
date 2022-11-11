@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fa46f5d-52a6-45de-b43a-0c4c5dee2a1f" name="Changes" comment="Parcial 3 - limpiar proyecto">
-      <change afterPath="$PROJECT_DIR$/test/uaslp/objetos/list/arraylist/ArrayListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/uaslp/objetos/list/linkedlist/LinkedListTest.java" afterDir="false" />
+    <list default="true" id="1fa46f5d-52a6-45de-b43a-0c4c5dee2a1f" name="Changes" comment="Parcial 3 - Unit tests con excepciones">
+      <change afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/exceptions/NullNotAllowedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/exceptions/WrongIndexException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collections.iml" beforeDir="false" afterPath="$PROJECT_DIR$/collections.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayListIterator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/arraylist/ArrayList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/uaslp/objetos/list/arraylist/ArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/uaslp/objetos/list/arraylist/ArrayListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/uaslp/objetos/list/linkedlist/LinkedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/uaslp/objetos/list/linkedlist/LinkedListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +30,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/org/junit/jupiter/api/AssertEquals.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/org/junit/jupiter/api/AssertionUtils.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/org/junit/jupiter/api/Assertions.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../dev/Java/jdk1.8.0_301/src.zip!/java/lang/StackTraceElement.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../dev/Java/jdk1.8.0_301/src.zip!/java/lang/Throwable.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,6 +67,11 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;HTML&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -66,6 +80,13 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in collections">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="collections" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in collections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
       <option name="PACKAGE_NAME" value="" />
@@ -74,64 +95,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayListTest.givenAListWith3Elements_whenSetAt1NullValue_thenExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
+          <option name="PATTERN" value="uaslp.objetos.list.arraylist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
-      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesAll_thenValuesAreRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="collections" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
-      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
-      <option name="METHOD_NAME" value="givenAnArray_whenRemoveAllWithValueRemovesAll_thenValuesAreRemoved" />
+      <option name="PACKAGE_NAME" value="uaslp.objetos.list.arraylist" />
+      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.arraylist.ArrayListTest" />
+      <option name="METHOD_NAME" value="givenAListWith3Elements_whenSetAt1NullValue_thenExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesTail_thenValuesAreRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayListTest.givenANewList_whenAddAtFrontNullValue_thenExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
+          <option name="PATTERN" value="uaslp.objetos.list.arraylist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
-      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
-      <option name="METHOD_NAME" value="givenAnArray_whenRemoveAllWithValueRemovesTail_thenValuesAreRemoved" />
+      <option name="PACKAGE_NAME" value="uaslp.objetos.list.arraylist" />
+      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.arraylist.ArrayListTest" />
+      <option name="METHOD_NAME" value="givenANewList_whenAddAtFrontNullValue_thenExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest.givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayListTest.givenANewList_whenAddAtTailNullValue_thenExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="collections" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uaslp.objetos.list.linkedlist.*" />
+          <option name="PATTERN" value="uaslp.objetos.list.arraylist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uaslp.objetos.list.linkedlist" />
-      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.linkedlist.LinkedListTest" />
-      <option name="METHOD_NAME" value="givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved" />
+      <option name="PACKAGE_NAME" value="uaslp.objetos.list.arraylist" />
+      <option name="MAIN_CLASS_NAME" value="uaslp.objetos.list.arraylist.ArrayListTest" />
+      <option name="METHOD_NAME" value="givenANewList_whenAddAtTailNullValue_thenExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,10 +146,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in collections" />
-        <item itemvalue="JUnit.LinkedListTest" />
-        <item itemvalue="JUnit.LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesTail_thenValuesAreRemoved" />
-        <item itemvalue="JUnit.LinkedListTest.givenAnArray_whenRemoveAllWithValueRemovesAll_thenValuesAreRemoved" />
-        <item itemvalue="JUnit.LinkedListTest.givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ArrayListTest.givenAListWith3Elements_whenSetAt1NullValue_thenExceptionIsThrown" />
+        <item itemvalue="JUnit.ArrayListTest.givenANewList_whenAddAtFrontNullValue_thenExceptionIsThrown" />
+        <item itemvalue="JUnit.ArrayListTest.givenANewList_whenAddAtTailNullValue_thenExceptionIsThrown" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +177,12 @@
       <workItem from="1666703851485" duration="2653000" />
       <workItem from="1666876929955" duration="2765000" />
       <workItem from="1666929855441" duration="2231000" />
-      <workItem from="1666963066928" duration="1071000" />
+      <workItem from="1666963066928" duration="5930000" />
+      <workItem from="1667486789468" duration="1081000" />
+      <workItem from="1667571053175" duration="6230000" />
+      <workItem from="1667830184798" duration="3957000" />
+      <workItem from="1667918125230" duration="1874000" />
+      <workItem from="1668180430733" duration="118000" />
     </task>
     <task id="LOCAL-00001" summary="Parcial 2- tareas">
       <created>1665555010877</created>
@@ -187,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666703957349</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Parcial 3 - Unit tests listas">
+      <created>1666964255693</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666964255693</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,14 +255,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Parcial 2- tareas" />
     <MESSAGE value="Parcial 3 - limpiar proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parcial 3 - limpiar proyecto" />
+    <MESSAGE value="Parcial 3 - Unit tests listas" />
+    <MESSAGE value="Parcial 3 - Unit tests con excepciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parcial 3 - Unit tests con excepciones" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/uaslp/objetos/list/linkedlist/LinkedList.java</url>
-          <line>137</line>
+          <line>147</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -259,7 +279,8 @@
     <SUITE FILE_PATH="coverage/collections$ArrayListTest.ic" NAME="ArrayListTest Coverage Results" MODIFIED="1666878903696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>uaslp.objetos.list.arraylist.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/collections$LinkedListTest.ic" NAME="LinkedListTest Coverage Results" MODIFIED="1666963565736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/collections$All_in_collections.ic" NAME="All in collections Coverage Results" MODIFIED="1667832021500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/collections$LinkedListTest.ic" NAME="LinkedListTest Coverage Results" MODIFIED="1666964177497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>uaslp.objetos.list.linkedlist.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/collections$LinkedListTest_givenANewList_whenAddAtTail_thenSizeIsOne.ic" NAME="LinkedListTest.givenANewList_whenAddAtTail_thenSizeIsOne Coverage Results" MODIFIED="1666704692314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

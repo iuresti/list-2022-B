@@ -4,12 +4,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.exceptions.NullNotAllowedException;
+import uaslp.objetos.list.exceptions.WrongIndexException;
 
+
+// Stack (pila) trace
 
 public class ArrayListTest {
 
 
     // TDD -> Test Driven Development
+
+    // Alto nivel -> Alto nivel de abstracción
+
+    // Bajo nivel -> Bajo nivel de abstracción C
+
+    // Ensamblador
+    // mnemónicos ADD, MOVE 1, 2
 
 
     @Test
@@ -25,7 +36,7 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenANewList_whenAddAtTail_thenSizeIsOne() {
+    public void givenANewList_whenAddAtTail_thenSizeIsOne() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -38,7 +49,31 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenANonEmptyList_whenAddAtTail_thenSizeIsIncreased() {
+    public void givenANewList_whenAddAtTailNullValue_thenExceptionIsThrown() throws NullNotAllowedException, WrongIndexException {
+        // Given:
+        ArrayList<String> lista = new ArrayList<>();
+
+        // When:
+        Assertions.assertThrows(NullNotAllowedException.class, ()->lista.addAtTail(null));
+
+        // Then:
+        Assertions.assertEquals(0, lista.getSize());
+    }
+
+    @Test
+    public void givenANewList_whenAddAtFrontNullValue_thenExceptionIsThrown() throws NullNotAllowedException, WrongIndexException {
+        // Given:
+        ArrayList<String> lista = new ArrayList<>();
+
+        // When:
+        Assertions.assertThrows(NullNotAllowedException.class, ()->lista.addAtFront(null));
+
+        // Then:
+        Assertions.assertEquals(0, lista.getSize());
+    }
+
+    @Test
+    public void givenANonEmptyList_whenAddAtTail_thenSizeIsIncreased() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -54,7 +89,7 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenANewList_whenAddAtFront_thenSizeIsOne() {
+    public void givenANewList_whenAddAtFront_thenSizeIsOne() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -67,66 +102,71 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenANonEmptyList_whenAddAtFront_thenSizeIsIncreased() {
-        // Given:
+    public void givenANonEmptyList_whenAddAtFront_thenSizeIsIncreased() throws NullNotAllowedException, WrongIndexException {
+        // Given: Preparación del test
         ArrayList<String> lista = new ArrayList<>();
 
         lista.addAtFront("Uno");
 
         // When:
-        lista.addAtFront("Dos");
+        lista.addAtFront("Dos"); //-> Ejecución del método a probar
 
-        // Then:
+        // Then:  // Validación de la prueba
         Assertions.assertEquals(2, lista.getSize());
         Assertions.assertEquals("Dos", lista.getAt(0));
         Assertions.assertEquals("Uno", lista.getAt(1));
     }
 
     @Test
-    public void givenAList_whenRemoveLessThanZero_thenReturnFalse() {
+    public void givenAList_whenRemoveLessThanZero_thenReturnFalse() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
         lista.addAtFront("Uno");
 
         // When:
-        boolean result = lista.remove(-1);
+        try {
+            lista.remove(-1);
+            Assertions.fail("Exception expected due to wrong index");
+        } catch (NullNotAllowedException | WrongIndexException ex) {
+            System.out.println("Exception thrown");
+        }
 
         // Then:
-        Assertions.assertFalse(result);
     }
 
     @Test
-    public void givenAList_whenRemoveGreaterThanSize_thenReturnFalse() {
+    public void givenAList_whenRemoveGreaterThanSize_thenReturnFalse() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
         lista.addAtFront("Uno");
 
         // When:
-        boolean result = lista.remove(1);
+        Assertions.assertThrows(WrongIndexException.class, () -> lista.remove(1));
 
         // Then:
-        Assertions.assertFalse(result);
+
     }
 
+    // checked vs unchecked exceptions
+
     @Test
-    public void givenAListWithOneElement_whenRemove0_thenReturnTrue() {
+    public void givenAListWithOneElement_whenRemove0_thenReturnTrue() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
         lista.addAtFront("Uno");
 
         // When:
-        boolean result = lista.remove(0);
+        lista.remove(0);
 
         // Then:
-        Assertions.assertTrue(result);
         Assertions.assertEquals(0, lista.getSize());
     }
 
     @Test
-    public void givenAListWithTwoElements_whenRemoveHead_thenReturnTrue() {
+    public void givenAListWithTwoElements_whenRemoveHead_thenReturnTrue() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -134,16 +174,15 @@ public class ArrayListTest {
         lista.addAtFront("Dos");
 
         // When:
-        boolean result = lista.remove(0);
+        lista.remove(0);
 
         // Then:
-        Assertions.assertTrue(result);
         Assertions.assertEquals(1, lista.getSize());
         Assertions.assertEquals(lista.getAt(0), "Uno");
     }
 
     @Test
-    public void givenAListWithTwoElements_whenRemoveTail_thenReturnTrue() {
+    public void givenAListWithTwoElements_whenRemoveTail_thenReturnTrue() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -151,16 +190,15 @@ public class ArrayListTest {
         lista.addAtTail("Dos");
 
         // When:
-        boolean result = lista.remove(1);
+        lista.remove(1);
 
         // Then:
-        Assertions.assertTrue(result);
         Assertions.assertEquals(1, lista.getSize());
         Assertions.assertEquals(lista.getAt(0), "Uno");
     }
 
     @Test
-    public void givenAListWith3Elements_whenRemoveMiddle_thenReturnTrue() {
+    public void givenAListWith3Elements_whenRemoveMiddle_thenReturnTrue() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -170,17 +208,16 @@ public class ArrayListTest {
 
 
         // When:
-        boolean result = lista.remove(1);
+        lista.remove(1);
 
         // Then:
-        Assertions.assertTrue(result);
         Assertions.assertEquals(2, lista.getSize());
         Assertions.assertEquals(lista.getAt(0), "Dos");
         Assertions.assertEquals(lista.getAt(1), "Tres");
     }
 
     @Test
-    public void givenAListWith3Elements_whenRemoveAll_thenSizeIsZero() {
+    public void givenAListWith3Elements_whenRemoveAll_thenSizeIsZero() throws NullNotAllowedException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -197,7 +234,7 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenAListWith3Elements_whenSetAt1_thenElementIsModified() {
+    public void givenAListWith3Elements_whenSetAt1_thenElementIsModified() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -206,18 +243,17 @@ public class ArrayListTest {
         lista.addAtTail("Tres");
 
         // When:
-        boolean result = lista.setAt(1, "Cuatro");
+        lista.setAt(1, "Cuatro");
 
         // Then:
         Assertions.assertEquals(3, lista.getSize());
         Assertions.assertEquals("Dos", lista.getAt(0));
         Assertions.assertEquals("Cuatro", lista.getAt(1));
         Assertions.assertEquals("Tres", lista.getAt(2));
-        Assertions.assertTrue(result);
     }
 
     @Test
-    public void givenAListWith3Elements_whenSetAtLessThanZero_thenReturnNull() {
+    public void givenAListWith3Elements_whenSetAt1NullValue_thenExceptionIsThrown() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -226,18 +262,17 @@ public class ArrayListTest {
         lista.addAtTail("Tres");
 
         // When:
-        boolean result = lista.setAt(-1, "Cuatro");
+        Assertions.assertThrows(NullNotAllowedException.class, () -> lista.setAt(1, null));
 
         // Then:
         Assertions.assertEquals(3, lista.getSize());
         Assertions.assertEquals("Dos", lista.getAt(0));
         Assertions.assertEquals("Uno", lista.getAt(1));
         Assertions.assertEquals("Tres", lista.getAt(2));
-        Assertions.assertFalse(result);
     }
 
     @Test
-    public void givenAListWith3Elements_whenSetAtIndex3_thenReturnNull() {
+    public void givenAListWith3Elements_whenSetAtLessThanZero_thenReturnNull() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -246,18 +281,36 @@ public class ArrayListTest {
         lista.addAtTail("Tres");
 
         // When:
-        boolean result = lista.setAt(3, "Cuatro");
+        Assertions.assertThrows(WrongIndexException.class, () -> lista.setAt(-1, "Cuatro"));
 
         // Then:
         Assertions.assertEquals(3, lista.getSize());
         Assertions.assertEquals("Dos", lista.getAt(0));
         Assertions.assertEquals("Uno", lista.getAt(1));
         Assertions.assertEquals("Tres", lista.getAt(2));
-        Assertions.assertFalse(result);
     }
 
     @Test
-    public void givenAListWith2Elements_whenAddAtFront_thenArrayIsIncreasedSuccessfully() {
+    public void givenAListWith3Elements_whenSetAtIndex3_thenReturnNull() throws NullNotAllowedException, WrongIndexException {
+        // Given:
+        ArrayList<String> lista = new ArrayList<>();
+
+        lista.addAtTail("Uno");
+        lista.addAtFront("Dos");
+        lista.addAtTail("Tres");
+
+        // When:
+        Assertions.assertThrows(WrongIndexException.class, () -> lista.setAt(3, "Cuatro"));
+
+        // Then:
+        Assertions.assertEquals(3, lista.getSize());
+        Assertions.assertEquals("Dos", lista.getAt(0));
+        Assertions.assertEquals("Uno", lista.getAt(1));
+        Assertions.assertEquals("Tres", lista.getAt(2));
+    }
+
+    @Test
+    public void givenAListWith2Elements_whenAddAtFront_thenArrayIsIncreasedSuccessfully() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
@@ -276,35 +329,29 @@ public class ArrayListTest {
 
     //TODO: copiar a LinkedList
     @Test
-    public void givenAnArray_whenGetAtNegative_thenNullIsReturned() {
+    public void givenAnArray_whenGetAtNegative_thenNullIsReturned() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
         lista.addAtFront("Algo");
 
         // When:
-        String value = lista.getAt(-1);
-
-        // Then:
-        Assertions.assertNull(value);
+        Assertions.assertThrows(WrongIndexException.class, () -> lista.getAt(-1));
     }
 
     @Test
-    public void givenAnArray_whenGetAtIndexGreaterThanSize_thenNullIsReturned() {
+    public void givenAnArray_whenGetAtIndexGreaterThanSize_thenNullIsReturned() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<String> lista = new ArrayList<>();
 
         lista.addAtFront("Algo");
 
         // When:
-        String value = lista.getAt(1);
-
-        // Then:
-        Assertions.assertNull(value);
+        Assertions.assertThrows(WrongIndexException.class, () -> lista.getAt(1));
     }
 
     @Test
-    public void givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved() {
+    public void givenAnArray_whenRemoveAllWithValue_thenValuesAreRemoved() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<Integer> lista = new ArrayList<>();
 
@@ -328,7 +375,7 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenAnArrayWithNoCoincidences_whenRemoveAllWithValue_thenValuesAreRemoved() {
+    public void givenAnArrayWithNoCoincidences_whenRemoveAllWithValue_thenValuesAreRemoved() throws NullNotAllowedException, WrongIndexException {
         // Given:
         ArrayList<Integer> lista = new ArrayList<>();
 
@@ -349,7 +396,7 @@ public class ArrayListTest {
     }
 
     @Test
-    public void givenANonEmptyList_whenIterate_thenIterationIsSuccessful() {
+    public void givenANonEmptyList_whenIterate_thenIterationIsSuccessful() throws NullNotAllowedException {
         // Given:
         ArrayList<Integer> lista = new ArrayList<>();
 

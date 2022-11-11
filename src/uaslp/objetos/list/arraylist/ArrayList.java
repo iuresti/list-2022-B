@@ -2,6 +2,8 @@ package uaslp.objetos.list.arraylist;
 
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
+import uaslp.objetos.list.exceptions.NullNotAllowedException;
+import uaslp.objetos.list.exceptions.WrongIndexException;
 
 public class ArrayList<T> implements List<T> {
 
@@ -10,11 +12,16 @@ public class ArrayList<T> implements List<T> {
 
     @SuppressWarnings("unchecked")
     public ArrayList() {
-        data = (T[])new Object[2];
+        data = (T[]) new Object[2];
     }
 
 
-    public void addAtTail(T data) {
+    public void addAtTail(T data) throws NullNotAllowedException {
+
+        if (data == null) {
+            throw new NullNotAllowedException();
+        }
+
         if (size == this.data.length) {
             increaseArraySize();
         }
@@ -25,17 +32,20 @@ public class ArrayList<T> implements List<T> {
 
     @SuppressWarnings("unchecked")
     private void increaseArraySize() {
-        T[] newArray = (T[])new Object[this.data.length * 2];
+        T[] newArray = (T[]) new Object[this.data.length * 2];
 
-        for (int i = 0; i < data.length; i++) {
-            newArray[i] = data[i];
-        }
+        System.arraycopy(data, 0, newArray, 0, data.length);
 
         data = newArray;
 
     }
 
-    public void addAtFront(T data) {
+    public void addAtFront(T data) throws NullNotAllowedException {
+
+        if (data == null) {
+            throw new NullNotAllowedException();
+        }
+
         if (size == this.data.length) {
             increaseArraySize();
         }
@@ -48,10 +58,10 @@ public class ArrayList<T> implements List<T> {
         size++;
     }
 
-    public boolean remove(int indexToRemove) {
+    public void remove(int indexToRemove) throws WrongIndexException {
 
         if (indexToRemove < 0 || indexToRemove >= size) {
-            return false;
+            throw new WrongIndexException();
         }
 
         for (int i = indexToRemove; i < size - 1; i++) {
@@ -59,8 +69,6 @@ public class ArrayList<T> implements List<T> {
         }
         size--;
         data[size] = null;
-
-        return true;
     }
 
     public void removeAll() {
@@ -71,19 +79,21 @@ public class ArrayList<T> implements List<T> {
 
     }
 
-    public boolean setAt(int index, T data) {
+    public void setAt(int index, T data) throws WrongIndexException, NullNotAllowedException {
+        if (data == null) {
+            throw new NullNotAllowedException();
+        }
+
         if (index < 0 || index >= size) {
-            return false;
+            throw new WrongIndexException();
         }
 
         this.data[index] = data;
-
-        return true;
     }
 
-    public T getAt(int index) {
+    public T getAt(int index) throws WrongIndexException {
         if (index < 0 || index >= size) {
-            return null;
+            throw new WrongIndexException();
         }
 
         return this.data[index];
@@ -92,7 +102,7 @@ public class ArrayList<T> implements List<T> {
     @SuppressWarnings("unchecked")
     public void removeAllWithValue(T value) {
 
-        T[] newArray = (T[])new Object[data.length];
+        T[] newArray = (T[]) new Object[data.length];
         int count = 0;
 
         for (int i = 0; i < size; i++) {
@@ -111,15 +121,15 @@ public class ArrayList<T> implements List<T> {
     }
 
     public Iterator<T> getIterator() {
-        return new Iterator<T>(){ // Clase anónima
-                 // Inner class no estática
+        return new Iterator<T>() { // Clase anónima
+            // Inner class no estática
             private int currentIndex = 0;
 
-            public boolean hasNext(){
+            public boolean hasNext() {
                 return currentIndex < size;
             }
 
-            public T next(){
+            public T next() {
                 return data[currentIndex++];
             }
         };
